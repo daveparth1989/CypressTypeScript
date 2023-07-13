@@ -1,0 +1,5 @@
+/results/*
+/screenshots/
+/node_modules/
+cypress/e2e/.DS_Store
+cypress/results/*
