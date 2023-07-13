@@ -12,7 +12,7 @@ export function verifyElemVisible(element:Cypress.Chainable<JQuery<HTMLElement>>
     return element.should('be.visible')
 }
 
-export function verifyMusicalDataAvailableInExpectedFormat() {
+export function verifyMusicalDataAvailableInExpectedFormat() :void {
     
     festivalPage.bandNameList().each(($el) =>{
         let found = false;
@@ -28,7 +28,7 @@ export function verifyMusicalDataAvailableInExpectedFormat() {
                         element.bands.forEach(band => {
                             if (bandName.includes(band.name)){
                             found = true;
-                            cy.log(` ${band.name} Perofrming at by ${element.name} `);
+                            cy.log(` ${band.name} Performing at by ${element.name} `);
                             
                             }  
                         })

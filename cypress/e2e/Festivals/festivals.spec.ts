@@ -1,7 +1,6 @@
 import * as festival from '../../support/page-objects/festivals.page'
 import * as driver from '../../support/driver'
 import * as assert from '../../support/assertions'
-import { forEachChild } from 'typescript'
 
 describe('Verify music festival Data is listed in a particular manner',() =>{
 

@@ -1,7 +1,7 @@
 /// <reference types="cypress"> />
 let responseBodyJson:any
 
-export function visit(url: string) {
+export function visit(url: string) : void {
     cy.visit(url);
 }
 
@@ -9,12 +9,12 @@ export function get_element(identifier: string){
     return cy.get(identifier);
 }
 
-export function startIntercept(method:string , endpoint: string){
+export function startIntercept(method:string , endpoint: string) : void{
     cy.intercept(method,endpoint).as("intercept");
        
 }
 
-export function endInterceptAndReturnResponse() {
+export function endInterceptAndReturnResponse() : void {
 
     cy.wait("@intercept").then(({response})=>{
         cy.wrap(response.body).as('responseBody').then(()=>{
@@ -26,6 +26,6 @@ export function endInterceptAndReturnResponse() {
     })
 }
 
-export function getResponseBody() {
+export function getResponseBody() :any{
     return responseBodyJson;
 }
